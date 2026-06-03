@@ -36,6 +36,7 @@ const LearningHeader = ({
         {headerLogo}
         <div className="flex-grow-1 course-title-lockup d-flex" style={{ lineHeight: 1 }}>
           <CourseInfoSlot courseOrg={courseOrg} courseNumber={courseNumber} courseTitle={courseTitle} />
+          <p>Test v1 Cyril</p>
         </div>
         {showUserDropdown && authenticatedUser && (
         <>
