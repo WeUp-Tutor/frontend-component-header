@@ -8,7 +8,7 @@ const Logo = ({
   ...attributes
 }) => (
   <a href={href} className="logo" {...attributes}>
-    <img className="d-block" src={src} alt={alt} />
+    <img className="d-block" src={src} alt={alt} style={{height: 40}} />
   </a>
 );
 

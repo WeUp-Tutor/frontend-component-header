@@ -66,12 +66,6 @@ const DesktopHeader = ({
         <div className="nav-container position-relative d-flex align-items-center">
           <LogoSlot {...logoProps} />
           <nav
-            aria-label={intl.formatMessage(messages['header.label.main.nav'])}
-            className="nav main-nav"
-          >
-            {renderMainMenu()}
-          </nav>
-          <nav
             aria-label={intl.formatMessage(messages['header.label.secondary.nav'])}
             className="nav secondary-menu-container align-items-center ml-auto"
           >

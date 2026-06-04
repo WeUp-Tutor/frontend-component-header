@@ -19,10 +19,6 @@ const AuthenticatedUserDropdown = ({ username }) => {
       href: `${getConfig().LMS_BASE_URL}/dashboard`,
     },
     {
-      message: intl.formatMessage(messages.profile),
-      href: `${getConfig().ACCOUNT_PROFILE_URL}/u/${username}`,
-    },
-    {
       message: intl.formatMessage(messages.account),
       href: getConfig().ACCOUNT_SETTINGS_URL,
     },
