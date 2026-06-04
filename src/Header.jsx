@@ -46,6 +46,17 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
  * @param {list} userMenuItems - The list of user menu items to display.
  * See the documentation for the structure of user menu item.
  */
+
+const ForcedStyles = () => (
+  <style>
+    {`
+      a.logo {
+        height: 41px !important;
+      }
+    `}
+  </style>
+);
+
 const Header = ({
   mainMenuItems, secondaryMenuItems, userMenuItems,
 }) => {
@@ -53,11 +64,6 @@ const Header = ({
   const intl = useIntl();
 
   const defaultMainMenu = [
-    {
-      type: 'item',
-      href: `${config.LMS_BASE_URL}/dashboard`,
-      content: intl.formatMessage(messages['header.links.courses']),
-    },
   ];
   const defaultUserMenu = authenticatedUser === null ? [] : [{
     heading: '',
@@ -66,11 +72,6 @@ const Header = ({
         type: 'item',
         href: `${config.LMS_BASE_URL}/dashboard`,
         content: intl.formatMessage(messages['header.user.menu.dashboard']),
-      },
-      {
-        type: 'item',
-        href: `${config.ACCOUNT_PROFILE_URL}/u/${authenticatedUser.username}`,
-        content: intl.formatMessage(messages['header.user.menu.profile']),
       },
       {
         type: 'item',
@@ -123,6 +124,8 @@ const Header = ({
 
   return (
     <>
+      <ForcedStyles />
+
       <Responsive maxWidth={769}>
         <MobileHeaderSlot props={props} />
       </Responsive>
