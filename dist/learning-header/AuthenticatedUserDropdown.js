@@ -16,9 +16,10 @@ import messages from './messages';
 var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
   var username = _ref.username;
   var intl = useIntl();
+  console.log('MFE_HOST', getConfig().MFE_HOST);
   var dropdownItems = [{
     message: intl.formatMessage(messages.dashboard),
-    href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
+    href: "https://".concat(getConfig().MFE_HOST, "/learning/course/course-v1:sncf-voyageurs+DC2+2024/home")
   }, {
     message: intl.formatMessage(messages.account),
     href: getConfig().ACCOUNT_SETTINGS_URL
