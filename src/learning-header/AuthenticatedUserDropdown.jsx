@@ -13,10 +13,13 @@ import messages from './messages';
 
 const AuthenticatedUserDropdown = ({ username }) => {
   const intl = useIntl();
+
+  console.log('MFE_HOST', getConfig().MFE_HOST);
+
   const dropdownItems = [
     {
       message: intl.formatMessage(messages.dashboard),
-      href: `${getConfig().LMS_BASE_URL}/dashboard`,
+      href: `https://${getConfig().MFE_HOST}/learning/course/course-v1:sncf-voyageurs+DC2+2024/home`,
     },
     {
       message: intl.formatMessage(messages.account),
