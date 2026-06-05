@@ -20,9 +20,6 @@ var AuthenticatedUserDropdown = function AuthenticatedUserDropdown(_ref) {
     message: intl.formatMessage(messages.dashboard),
     href: "".concat(getConfig().LMS_BASE_URL, "/dashboard")
   }, {
-    message: intl.formatMessage(messages.profile),
-    href: "".concat(getConfig().ACCOUNT_PROFILE_URL, "/u/").concat(username)
-  }, {
     message: intl.formatMessage(messages.account),
     href: getConfig().ACCOUNT_SETTINGS_URL
   }].concat(_toConsumableArray(getConfig().ORDER_HISTORY_URL ? [{

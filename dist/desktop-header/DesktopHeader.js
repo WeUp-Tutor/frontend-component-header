@@ -82,9 +82,6 @@ var DesktopHeader = function DesktopHeader(_ref) {
   }, /*#__PURE__*/React.createElement("div", {
     className: "nav-container position-relative d-flex align-items-center"
   }, /*#__PURE__*/React.createElement(LogoSlot, logoProps), /*#__PURE__*/React.createElement("nav", {
-    "aria-label": intl.formatMessage(messages['header.label.main.nav']),
-    className: "nav main-nav"
-  }, renderMainMenu()), /*#__PURE__*/React.createElement("nav", {
     "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
     className: "nav secondary-menu-container align-items-center ml-auto"
   }, loggedIn ? /*#__PURE__*/React.createElement(React.Fragment, null, renderSecondaryMenu(), renderUserMenu()) : renderLoggedOutItems()))));

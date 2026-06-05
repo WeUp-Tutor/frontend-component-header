@@ -35,6 +35,10 @@ subscribe(APP_CONFIG_INITIALIZED, function () {
  * @param {list} userMenuItems - The list of user menu items to display.
  * See the documentation for the structure of user menu item.
  */
+
+var ForcedStyles = function ForcedStyles() {
+  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo {\n        height: 41px !important;\n      }\n    ");
+};
 var Header = function Header(_ref) {
   var mainMenuItems = _ref.mainMenuItems,
     secondaryMenuItems = _ref.secondaryMenuItems,
@@ -43,21 +47,15 @@ var Header = function Header(_ref) {
     authenticatedUser = _useContext.authenticatedUser,
     config = _useContext.config;
   var intl = useIntl();
-  var defaultMainMenu = [{
-    type: 'item',
-    href: "".concat(config.LMS_BASE_URL, "/dashboard"),
-    content: intl.formatMessage(messages['header.links.courses'])
-  }];
+  console.log('44444444444444');
+  console.log('composant header');
+  var defaultMainMenu = [];
   var defaultUserMenu = authenticatedUser === null ? [] : [{
     heading: '',
     items: [{
       type: 'item',
       href: "".concat(config.LMS_BASE_URL, "/dashboard"),
       content: intl.formatMessage(messages['header.user.menu.dashboard'])
-    }, {
-      type: 'item',
-      href: "".concat(config.ACCOUNT_PROFILE_URL, "/u/").concat(authenticatedUser.username),
-      content: intl.formatMessage(messages['header.user.menu.profile'])
     }, {
       type: 'item',
       href: config.ACCOUNT_SETTINGS_URL,
@@ -96,7 +94,8 @@ var Header = function Header(_ref) {
     userMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : userMenu,
     loggedOutItems: getConfig().AUTHN_MINIMAL_HEADER ? [] : loggedOutItems
   };
-  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(Responsive, {
+  console.log('44444444444444');
+  return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ForcedStyles, null), /*#__PURE__*/React.createElement(Responsive, {
     maxWidth: 769
   }, /*#__PURE__*/React.createElement(MobileHeaderSlot, {
     props: props

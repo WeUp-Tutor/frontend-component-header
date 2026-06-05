@@ -15,7 +15,10 @@ var Logo = function Logo(_ref) {
   }, attributes), /*#__PURE__*/React.createElement("img", {
     className: "d-block",
     src: src,
-    alt: alt
+    alt: alt,
+    style: {
+      height: 40
+    }
   }));
 };
 export var logoDataShape = {
