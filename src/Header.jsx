@@ -63,8 +63,6 @@ const Header = ({
   const { authenticatedUser, config } = useContext(AppContext);
   const intl = useIntl();
 
-  console.log('44444444444444')
-  console.log('composant header')
 
   const defaultMainMenu = [
   ];
@@ -125,7 +123,6 @@ const Header = ({
     loggedOutItems: getConfig().AUTHN_MINIMAL_HEADER ? [] : loggedOutItems,
   };
 
-  console.log('44444444444444')
 
   return (
     <>

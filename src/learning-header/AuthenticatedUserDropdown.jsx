@@ -14,7 +14,6 @@ import messages from './messages';
 const AuthenticatedUserDropdown = ({ username }) => {
   const intl = useIntl();
 
-  console.log('MFE_HOST', getConfig().MFE_HOST);
 
   const dropdownItems = [
     {
