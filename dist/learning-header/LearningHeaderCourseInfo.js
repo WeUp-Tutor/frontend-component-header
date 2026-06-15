@@ -9,8 +9,6 @@ var LearningHeaderCourseInfo = function LearningHeaderCourseInfo(_ref) {
       minWidth: 0
     }
   }, /*#__PURE__*/React.createElement("span", {
-    className: "d-block small m-0"
-  }, courseOrg, " ", courseNumber), /*#__PURE__*/React.createElement("span", {
     className: "d-block m-0 font-weight-bold course-title"
   }, courseTitle));
 };
