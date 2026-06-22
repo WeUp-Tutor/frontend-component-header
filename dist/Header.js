@@ -47,8 +47,6 @@ var Header = function Header(_ref) {
     authenticatedUser = _useContext.authenticatedUser,
     config = _useContext.config;
   var intl = useIntl();
-  console.log('44444444444444');
-  console.log('composant header');
   var defaultMainMenu = [];
   var defaultUserMenu = authenticatedUser === null ? [] : [{
     heading: '',
@@ -94,7 +92,6 @@ var Header = function Header(_ref) {
     userMenu: getConfig().AUTHN_MINIMAL_HEADER ? [] : userMenu,
     loggedOutItems: getConfig().AUTHN_MINIMAL_HEADER ? [] : loggedOutItems
   };
-  console.log('44444444444444');
   return /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(ForcedStyles, null), /*#__PURE__*/React.createElement(Responsive, {
     maxWidth: 769
   }, /*#__PURE__*/React.createElement(MobileHeaderSlot, {
