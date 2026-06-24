@@ -50,8 +50,9 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
 const ForcedStyles = () => (
   <style>
     {`
-      a.logo {
-        height: 41px !important;
+      a.logo img {
+        height: 50px !important;
+        margin-left: 5px;
       }
     `}
   </style>
