@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import { getConfig } from '@edx/frontend-platform';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 
 // Local Components
 import DesktopUserMenuToggleSlot from '../plugin-slots/DesktopUserMenuToggleSlot';
@@ -32,6 +33,11 @@ var DesktopHeader = function DesktopHeader(_ref) {
     username = _ref.username,
     loggedIn = _ref.loggedIn;
   var intl = useIntl();
+  var authenticatedUser = getAuthenticatedUser();
+  var showAdminButton = loggedIn && Boolean(authenticatedUser === null || authenticatedUser === void 0 ? void 0 : authenticatedUser.administrator);
+  console.log('test 1507');
+  console.log(showAdminButton);
+  console.log(authenticatedUser);
   var renderMainMenu = function renderMainMenu() {
     return /*#__PURE__*/React.createElement(DesktopMainMenuSlot, {
       menu: mainMenu
@@ -81,7 +87,10 @@ var DesktopHeader = function DesktopHeader(_ref) {
     className: "container-fluid ".concat(logoClasses)
   }, /*#__PURE__*/React.createElement("div", {
     className: "nav-container position-relative d-flex align-items-center"
-  }, /*#__PURE__*/React.createElement(LogoSlot, logoProps), /*#__PURE__*/React.createElement("nav", {
+  }, /*#__PURE__*/React.createElement(LogoSlot, logoProps), showAdminButton && /*#__PURE__*/React.createElement("a", {
+    href: "/wul_apps/dashboard_datavis",
+    className: "btn btn-outline-primary ml-2"
+  }, "Page Administrateur"), /*#__PURE__*/React.createElement("nav", {
     "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
     className: "nav secondary-menu-container align-items-center ml-auto"
   }, loggedIn ? /*#__PURE__*/React.createElement(React.Fragment, null, renderSecondaryMenu(), renderUserMenu()) : renderLoggedOutItems()))));
