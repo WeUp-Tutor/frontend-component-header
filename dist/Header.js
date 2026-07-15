@@ -37,7 +37,7 @@ subscribe(APP_CONFIG_INITIALIZED, function () {
  */
 
 var ForcedStyles = function ForcedStyles() {
-  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo {\n        height: 41px !important;\n      }\n    ");
+  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n    ");
 };
 var Header = function Header(_ref) {
   var mainMenuItems = _ref.mainMenuItems,
