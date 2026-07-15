@@ -74,7 +74,7 @@ const DesktopHeader = ({
           <LogoSlot {...logoProps} />
 
           {showAdminButton && (
-            <a href={adminDashboardUrl} className="btn btn-outline-primary" style={{marginLeft: auto}} >
+            <a href={adminDashboardUrl} className="btn btn-outline-primary ml-auto" >
               Page Administrateur
             </a>
           )}

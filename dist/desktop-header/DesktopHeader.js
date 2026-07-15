@@ -87,10 +87,7 @@ var DesktopHeader = function DesktopHeader(_ref) {
     className: "nav-container position-relative d-flex align-items-center"
   }, /*#__PURE__*/React.createElement(LogoSlot, logoProps), showAdminButton && /*#__PURE__*/React.createElement("a", {
     href: adminDashboardUrl,
-    className: "btn btn-outline-primary",
-    style: {
-      marginLeft: auto
-    }
+    className: "btn btn-outline-primary ml-auto"
   }, "Page Administrateur"), /*#__PURE__*/React.createElement("nav", {
     "aria-label": intl.formatMessage(messages['header.label.secondary.nav']),
     className: "nav secondary-menu-container align-items-center ml-auto"
