@@ -40,11 +40,7 @@ const DesktopHeader = ({
 
   const authenticatedUser = getAuthenticatedUser();
   const showAdminButton = loggedIn && Boolean(authenticatedUser?.administrator);
- 
-  console.log('test 1507')
-  console.log(showAdminButton)
-  console.log(authenticatedUser)
-
+  const adminDashboardUrl = `${getConfig().LMS_BASE_URL}/wul_apps/dashboard_datavis`;
 
   const renderMainMenu = () => <DesktopMainMenuSlot menu={mainMenu} />;
 
@@ -78,10 +74,7 @@ const DesktopHeader = ({
           <LogoSlot {...logoProps} />
 
           {showAdminButton && (
-            <a
-              href="/wul_apps/dashboard_datavis"
-              className="btn btn-outline-primary ml-2"
-            >
+            <a href={adminDashboardUrl} className="btn btn-outline-primary" style={{marginLeft: auto}} >
               Page Administrateur
             </a>
           )}
