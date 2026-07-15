@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import { getConfig } from '@edx/frontend-platform';
+import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
+
 
 // Local Components
 import DesktopUserMenuToggleSlot
@@ -35,6 +37,15 @@ const DesktopHeader = ({
 }) => {
   const intl = useIntl();
 
+
+  const authenticatedUser = getAuthenticatedUser();
+  const showAdminButton = loggedIn && Boolean(authenticatedUser?.administrator);
+ 
+  console.log('test 1507')
+  console.log(showAdminButton)
+  console.log(authenticatedUser)
+
+
   const renderMainMenu = () => <DesktopMainMenuSlot menu={mainMenu} />;
 
   const renderSecondaryMenu = () => <DesktopSecondaryMenuSlot menu={secondaryMenu} />;
@@ -65,6 +76,16 @@ const DesktopHeader = ({
       <div className={`container-fluid ${logoClasses}`}>
         <div className="nav-container position-relative d-flex align-items-center">
           <LogoSlot {...logoProps} />
+
+          {showAdminButton && (
+            <a
+              href="/wul_apps/dashboard_datavis"
+              className="btn btn-outline-primary ml-2"
+            >
+              Page Administrateur
+            </a>
+          )}
+
           <nav
             aria-label={intl.formatMessage(messages['header.label.secondary.nav'])}
             className="nav secondary-menu-container align-items-center ml-auto"
@@ -123,3 +144,4 @@ DesktopHeader.defaultProps = {
 };
 
 export default DesktopHeader;
+
