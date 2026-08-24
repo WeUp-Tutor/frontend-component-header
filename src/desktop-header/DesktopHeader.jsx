@@ -73,12 +73,6 @@ const DesktopHeader = ({
         <div className="nav-container position-relative d-flex align-items-center">
           <LogoSlot {...logoProps} />
 
-          {showAdminButton && (
-            <a href={adminDashboardUrl} className="btn btn-outline-primary ml-auto" >
-              Page Administrateur
-            </a>
-          )}
-
           <nav
             aria-label={intl.formatMessage(messages['header.label.secondary.nav'])}
             className="nav secondary-menu-container align-items-center ml-auto"
