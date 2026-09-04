@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { getConfig } from '@edx/frontend-platform';
-import { getAuthenticatedUser } from '@edx/frontend-platform/auth';
 import { useIntl } from '@edx/frontend-platform/i18n';
 import { Dropdown } from '@openedx/paragon';
 
@@ -23,71 +22,6 @@ function getCookie(name) {
   const parts = value.split(`; ${name}=`);
   if (parts.length === 2) return parts.pop().split(';').shift();
   return null;
-}
-
-
-async function syncEmailInCustomFields() {
-  console.log('77777777777777777777777777777777777777777777777777777777777777777')
-  console.log('77777777777777777777777777777777777777777777777777777777777777777')
-  console.log('77777777777777777777777777777777777777777777777777777777777777777')
-
-  console.log('start syncEmailInCustomFields');
-
-  const user = getAuthenticatedUser();
-  const userEmail = user?.email;
-  if (!userEmail) {
-    console.warn('[CustomFields] Email utilisateur non disponible');
-    return;
-  }
-
-  try {
-    // GET
-    const getRes = await fetch(API_URL, {
-      method: 'GET',
-      credentials: 'same-origin',
-      headers: {
-        'Accept': 'application/json',
-        // 'X-CSRFToken': getCookie('csrftoken'), // pas nécessaire si csrf_exempt
-      },
-    });
-
-    const getData = await getRes.json();
-    if (!getRes.ok) {
-      console.error('[CustomFields] GET error', getData);
-      return;
-    }
-
-    const existingFields = getData.data || {};
-
-    // POST avec email ajouté
-    const payload = {
-      ...existingFields,
-      email: userEmail,
-    };
-
-    const postRes = await fetch(API_URL, {
-      method: 'POST',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        // 'X-CSRFToken': getCookie('csrftoken'), // pas nécessaire si csrf_exempt
-      },
-      body: JSON.stringify(payload),
-    });
-
-    const postData = await postRes.json();
-    if (!postRes.ok) {
-      console.error('[CustomFields] POST error', postData);
-      return;
-    }
-
-    console.log('[CustomFields] Email synchronisé', postData);
-  } catch (err) {
-    console.error('[CustomFields] Exception:', err);
-  }
-  console.log('77777777777777777777777777777777777777777777777777777777777777777')
-
 }
 
 
