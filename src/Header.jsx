@@ -50,10 +50,21 @@ subscribe(APP_CONFIG_INITIALIZED, () => {
 const ForcedStyles = () => (
   <style>
     {`
+      a.logo {
+        top: -11px;
+        padding-left: 10px;
+      }
       a.logo img {
         height: 50px !important;
         margin-left: 5px;
       }
+      #notificationIcon {
+        display: none !important;
+      }
+      header .container-fluid {
+        margin: 10px 0;
+      }
+
     `}
   </style>
 );
