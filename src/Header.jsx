@@ -51,8 +51,8 @@ const ForcedStyles = () => (
   <style>
     {`
       a.logo {
-        top: -11px;
-        padding-left: 10px;
+        top: -11px !important;
+        padding-left: 10px !important;
       }
       a.logo img {
         height: 50px !important;
@@ -64,7 +64,6 @@ const ForcedStyles = () => (
       header .container-fluid {
         margin: 10px 0;
       }
-
     `}
   </style>
 );
