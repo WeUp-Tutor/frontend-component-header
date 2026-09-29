@@ -37,7 +37,7 @@ subscribe(APP_CONFIG_INITIALIZED, function () {
  */
 
 var ForcedStyles = function ForcedStyles() {
-  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo {\n        top: -11px !important;\n        padding-left: 10px !important;\n      }\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n      #notificationIcon {\n        display: none !important;\n      }\n      header .container-fluid {\n        margin: 10px 0;\n      }\n    ");
+  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo {\n        top: -11px !important;\n        padding-left: 10px !important;\n      }\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n      #notificationIcon {\n        display: none !important;\n      }\n      header .container-fluid {\n        margin: 10px 0;\n      }\n      header .btn {\n        background-color: unset !important;\n      }\n    ");
 };
 var Header = function Header(_ref) {
   var mainMenuItems = _ref.mainMenuItems,

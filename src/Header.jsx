@@ -64,6 +64,9 @@ const ForcedStyles = () => (
       header .container-fluid {
         margin: 10px 0;
       }
+      header .btn {
+        background-color: unset !important;
+      }
     `}
   </style>
 );
