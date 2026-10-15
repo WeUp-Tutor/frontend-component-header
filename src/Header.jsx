@@ -54,10 +54,27 @@ const ForcedStyles = () => (
         height: 50px !important;
         margin-left: 5px;
       }
+        .infobanner {
+          text-align: center;
+          background-color: orange;
+          padding: 1em;
+          font-weight: bold;
+        }
     `}
   </style>
 );
 
+
+const InfoBanner = () => (
+  <div className="infobanner">
+    Des ajustements sont actuellement en cours sur la plateforme.
+    <br />
+    Les signalements reçus ont bien été pris en compte et sont en cours de
+    traitement.
+    <br />
+    Merci pour votre patience et votre compréhension.
+  </div>
+);
 const Header = ({
   mainMenuItems, secondaryMenuItems, userMenuItems,
 }) => {
@@ -128,13 +145,13 @@ const Header = ({
   return (
     <>
       <ForcedStyles />
-
       <Responsive maxWidth={769}>
         <MobileHeaderSlot props={props} />
       </Responsive>
       <Responsive minWidth={769}>
         <DesktopHeaderSlot props={props} />
       </Responsive>
+      <InfoBanner />
     </>
   );
 };
