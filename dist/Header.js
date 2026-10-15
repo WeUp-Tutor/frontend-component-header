@@ -37,7 +37,12 @@ subscribe(APP_CONFIG_INITIALIZED, function () {
  */
 
 var ForcedStyles = function ForcedStyles() {
-  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n    ");
+  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n        .infobanner {\n          text-align: center;\n          background-color: orange;\n          padding: 1em;\n          font-weight: bold;\n        }\n    ");
+};
+var InfoBanner = function InfoBanner() {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "infobanner"
+  }, "Des ajustements sont actuellement en cours sur la plateforme.", /*#__PURE__*/React.createElement("br", null), "Les signalements re\xE7us ont bien \xE9t\xE9 pris en compte et sont en cours de traitement.", /*#__PURE__*/React.createElement("br", null), "Merci pour votre patience et votre compr\xE9hension.");
 };
 var Header = function Header(_ref) {
   var mainMenuItems = _ref.mainMenuItems,
@@ -100,7 +105,7 @@ var Header = function Header(_ref) {
     minWidth: 769
   }, /*#__PURE__*/React.createElement(DesktopHeaderSlot, {
     props: props
-  })));
+  })), /*#__PURE__*/React.createElement(InfoBanner, null));
 };
 Header.defaultProps = {
   mainMenuItems: null,
