@@ -59,6 +59,7 @@ const ForcedStyles = () => (
           background-color: orange;
           padding: 1em;
           font-weight: bold;
+          display: none;
         }
     `}
   </style>
