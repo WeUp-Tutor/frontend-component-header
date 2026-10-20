@@ -37,7 +37,7 @@ subscribe(APP_CONFIG_INITIALIZED, function () {
  */
 
 var ForcedStyles = function ForcedStyles() {
-  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n        .infobanner {\n          text-align: center;\n          background-color: orange;\n          padding: 1em;\n          font-weight: bold;\n        }\n    ");
+  return /*#__PURE__*/React.createElement("style", null, "\n      a.logo img {\n        height: 50px !important;\n        margin-left: 5px;\n      }\n        .infobanner {\n          text-align: center;\n          background-color: orange;\n          padding: 1em;\n          font-weight: bold;\n          display: none;\n        }\n    ");
 };
 var InfoBanner = function InfoBanner() {
   return /*#__PURE__*/React.createElement("div", {
