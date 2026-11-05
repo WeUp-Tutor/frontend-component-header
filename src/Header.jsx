@@ -52,17 +52,14 @@ const ForcedStyles = () => (
     {`
       a.logo {
         top: -11px !important;
-        padding-left: 10px !important;
+        padding: 0 0 0 10px !important;
       }
       a.logo img {
-        height: 50px !important;
+        height: 75px !important;
         margin-left: 5px;
       }
       #notificationIcon {
         display: none !important;
-      }
-      header .container-fluid {
-        margin: 10px 0;
       }
       header .btn {
         background-color: unset !important;
