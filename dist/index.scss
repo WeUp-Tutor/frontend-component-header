@@ -70,9 +70,13 @@ $rounded-pill: 50rem  !default;
 
 
 .site-header-desktop {
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
-  background: var(--pgn-color-white, $white);
+//  box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
+//  background: var(--pgn-color-white, $white);
 
+
+  .nav-container {
+    height: 80px;
+  }
   .nav-link {
     text-decoration: none;
   }
@@ -117,7 +121,7 @@ $rounded-pill: 50rem  !default;
     }
 
     .menu {
-      position: static;
+ //     position: static;
 
       .menu-content {
         border-top: solid 2px var(--pgn-color-bg-active);
@@ -134,4 +138,33 @@ $rounded-pill: 50rem  !default;
   .search-input {
     border-radius: var(--pgn-size-rounded-pill, $rounded-pill);
   }
+}
+
+/* Conteneur du bouton compte */
+.menu.null {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Fond avec bords modernes (forme de la capture) */
+.menu.null::before {
+  content: "";
+  position: absolute;
+  top: -12px;              /* ajustez selon la hauteur de votre header */
+  bottom: -12px;
+  left: -40px;
+  right: -24px;
+  background: #fff;
+  border-radius: 0 0 0 60px / 0 0 0 60px;   /* arrondi coin bas-gauche */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+/* Le bouton reste au-dessus du fond */
+.menu.null .menu-trigger {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  color: #1b2f55;          /* bleu foncé comme votre avatar */
 }
