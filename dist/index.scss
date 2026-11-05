@@ -144,20 +144,31 @@ $rounded-pill: 50rem  !default;
 .menu.null {
   position: relative;
   display: inline-flex;
+  /* l'ombre est portée par le parent, pour ne pas être coupée par le clip-path */
+  filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.18));
 }
 
-/* Fond avec bords modernes (forme de la capture) */
 .menu.null::before {
   content: "";
   position: absolute;
-  top: -12px;              /* ajustez selon la hauteur de votre header */
-  bottom: -12px;
-  left: -40px;
+  top: -12px;
+  bottom: -24px;           /* languette qui descend sous le bouton */
+  left: -70px;
   right: -24px;
   background: #fff;
-  border-radius: 0 0 0 60px / 0 0 0 60px;   /* arrondi coin bas-gauche */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
   z-index: 0;
+
+  /* diagonale à 45° puis arrondi vers le bas */
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    45px 100%,
+    28px 96%,
+    18px 88%,
+    0% 55%
+  );
+
 }
 
 /* Le bouton reste au-dessus du fond */
