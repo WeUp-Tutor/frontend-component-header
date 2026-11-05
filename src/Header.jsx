@@ -51,7 +51,7 @@ const ForcedStyles = () => (
   <style>
     {`
       a.logo {
-        top: -11px !important;
+        top: -26px !important;
         padding: 0 0 0 10px !important;
       }
       a.logo img {
