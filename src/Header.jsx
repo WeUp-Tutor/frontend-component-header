@@ -55,8 +55,8 @@ const ForcedStyles = () => (
         padding: 0 0 0 10px !important;
       }
       a.logo img {
-        height: 75px !important;
-        margin-left: 5px;
+        height: 86px !important;
+        margin-left: -10px;
       }
       #notificationIcon {
         display: none !important;
