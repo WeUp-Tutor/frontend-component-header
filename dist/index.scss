@@ -74,6 +74,10 @@ $rounded-pill: 50rem  !default;
 //  background: var(--pgn-color-white, $white);
 
 
+  .container-fluid {
+    padding-right: 0 !important;
+  }
+
   .nav-container {
     height: 80px;
   }
@@ -122,6 +126,8 @@ $rounded-pill: 50rem  !default;
 
     .menu {
       position: static;
+      width: 200px;
+      height: 80px;
 
       .menu-content {
         border-top: solid 2px var(--pgn-color-bg-active);
@@ -143,4 +149,7 @@ $rounded-pill: 50rem  !default;
 .menu-trigger {
   background: url("./assets/top_right_back.png") no-repeat right top / 100% 100% !important;
   border: 0 !important;
+  height: 100%;
+  width: 100%;
+  border-radius: unset;
 }
